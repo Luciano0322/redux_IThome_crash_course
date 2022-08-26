@@ -1,4 +1,6 @@
 // console.log('Hello World!');
+const createStore = require('redux').createStore;
+
 // 這邊都可以拆出去，但因為方便Demo，所以先不演示
 const COFFEE_ORDERED = 'COFFEE_ORDERED';
 // ============================================>
@@ -44,3 +46,18 @@ const reducer = (state = initialState, action) => {
   }
 }
 // Reducer End============================================>
+
+// ============================================>
+// 建立Store
+const store = createStore(reducer)
+// 來試試拿取 initialState
+console.log('initial state', store.getState());
+// 當state change時可以觸發的 callback
+const unsubscribe = store.subscribe(() => console.log('更新', store.getState()))
+
+// 讓我們來試看看點餐
+store.dispatch(orderCoffee())
+store.dispatch(orderCoffeeObj)
+store.dispatch(orderCoffeeByNum(2))
+
+unsubscribe()
