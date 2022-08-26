@@ -1,6 +1,7 @@
 // console.log('Hello World!');
 // 這邊都可以拆出去，但因為方便Demo，所以先不演示
 const COFFEE_ORDERED = 'COFFEE_ORDERED';
+// ============================================>
 // 建立Action
 const orderCoffee = () => {
   return {
@@ -20,3 +21,26 @@ const orderCoffeeByNum = (num) => {
     payload: num
   }
 }
+// Action End============================================>
+
+// ============================================>
+// 建立Reducer
+// 先建立我們的initialState
+const initialState = {
+  numOfCoffee: 20,
+  numOfCoffeeBean: 20,
+  numOfCake: 20,
+}
+// 這部分和useReducer hook是一樣的
+const reducer = (state = initialState, action) => {
+  switch(action.type) {
+    case COFFEE_ORDERED:
+      return {
+        ...state,
+        numOfCoffee: state.numOfCoffee - action.payload
+      }
+    default: 
+      return state;
+  }
+}
+// Reducer End============================================>
