@@ -1,4 +1,4 @@
-const { COFFEE_ORDERED, COFFEEBEAN_ORDERED } = require("./types")
+const { COFFEE_ORDERED, COFFEEBEAN_ORDERED, CAKE_ORDERED } = require("./types")
 
 const orderCoffee = (qty, income) => {
   return {
@@ -20,7 +20,18 @@ const orderCoffeeBean = (qty, income) => {
   }
 }
 
+const orderCake = (qty, income) => {
+  return {
+    type: CAKE_ORDERED,
+    payload: {
+      qty: qty,
+      income: income
+    }
+  }
+}
+
 module.exports = {
   orderCoffee,
-  orderCoffeeBean
+  orderCoffeeBean,
+  orderCake
 }

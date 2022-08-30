@@ -1,4 +1,4 @@
-const { COFFEE_RESTOCKED, COFFEEBEAN_RESTOCKED } = require("./types")
+const { COFFEE_RESTOCKED, COFFEEBEAN_RESTOCKED, CAKE_RESTOCKED } = require("./types")
 
 // 數量要相加，錢花掉了要相減
 const restockCoffee = (qty, pay) => {
@@ -21,7 +21,18 @@ const restockCoffeeBean = (qty, pay) => {
   }
 }
 
+const restockCake = (qty, pay) => {
+  return {
+    type: CAKE_RESTOCKED,
+    payload: {
+      qty: qty,
+      pay: pay,
+    }
+  }
+}
+
 module.exports = {
   restockCoffee,
-  restockCoffeeBean
+  restockCoffeeBean,
+  restockCake
 }
