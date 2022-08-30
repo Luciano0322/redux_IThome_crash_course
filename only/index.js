@@ -1,5 +1,5 @@
-const { orderCoffee } = require('./action/order');
-const { restockCoffee } = require('./action/restock');
+const { orderCoffee, orderCoffeeBean } = require('./action/order');
+const { restockCoffee, restockCoffeeBean } = require('./action/restock');
 const { store } = require('./store');
 
 // 來試試拿取 initialState
@@ -11,5 +11,9 @@ const unsubscribe = store.subscribe(() => console.log('更新', store.getState()
 store.dispatch(orderCoffee(2, 20))
 // 測試補咖啡
 store.dispatch(restockCoffee(20, 10))
+// 讓我們來試看看買咖啡豆
+store.dispatch(orderCoffeeBean(3, 15))
+// 測試補咖啡豆
+store.dispatch(restockCoffeeBean(10, 10))
 
 unsubscribe()
