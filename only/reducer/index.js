@@ -1,8 +1,14 @@
 const { combineReducers } = require("redux");
-const { orderReducer } = require('./orderReducer')
+const { assetsReducer } = require("./assetsReducer");
+const { cakeReducer } = require("./cakeReducer");
+const { coffeeBeanReducer } = require("./coffeeBeanReducer");
+const { coffeeReducer } = require("./coffeeReducer");
 
 const reducers = combineReducers({
-  orderReducer,
+  coffee: coffeeReducer,
+  coffeeBean: coffeeBeanReducer,
+  cake: cakeReducer,
+  money: assetsReducer,
 })
 
 module.exports = {
