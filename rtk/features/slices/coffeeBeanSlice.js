@@ -9,12 +9,14 @@ const coffeeBeanSlice = createSlice({
   name: 'coffeeBean',
   initialState,
   reducers: {
+    // 是 qty, 我加了 qty
     coffeeBeanOrdered: (state, action) => {
-      state.numOfCoffeeBean = state.numOfCoffeeBean - action.payload
+      state.numOfCoffeeBean = state.numOfCoffeeBean - action.payload.qty
       return state;
     },
     coffeeBeanRestocked: (state, action) => {
-      state.numOfCoffeeBean = state.numOfCoffeeBean + action.payload
+      // 是 qty, 我加了 qty
+      state.numOfCoffeeBean = state.numOfCoffeeBean + action.payload.qty
       return state;
     },
   }
