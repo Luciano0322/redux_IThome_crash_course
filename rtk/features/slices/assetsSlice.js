@@ -1,0 +1,37 @@
+const { createSlice } = require("@reduxjs/toolkit");
+const { coffeeOrdered, coffeeRestocked } = require('./coffeeSlice').coffeeActions;
+// only assetsReducer
+const initialState = {
+  money: 1000,
+}
+
+const assetsSlice = createSlice({
+  name: 'assets',
+  initialState,
+  reducers: {},
+  // 這個是讓其他的slice reducer function來影響這裡的state，以下為兩種不同的寫法。
+  // extraReducers: {
+  //   ['coffee/coffeeOrdered']: (state, action) => {
+  //     state.money = state.money + action.payload.money
+  //     return state;
+  //   },
+  //   ['coffee/coffeeRestocked']: (state, action) => {
+  //     state.money = state.money - action.payload.money
+  //     return state;
+  //   },
+  // }
+  extraReducers: (builder) => {
+    builder
+    .addCase(coffeeOrdered, (state, action) => {
+      state.money = state.money + action.payload.money
+      return state;
+    })
+    .addCase(coffeeRestocked, (state, action) => {
+      state.money = state.money - action.payload.money
+      return state;
+    })
+  }
+})
+
+module.exports = assetsSlice.reducer;
+module.exports.cakeActions = assetsSlice.actions;
