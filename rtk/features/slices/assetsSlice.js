@@ -1,6 +1,7 @@
 const { createSlice } = require("@reduxjs/toolkit");
 const { coffeeOrdered, coffeeRestocked } = require('./coffeeSlice').coffeeActions;
 const { coffeeBeanOrdered, coffeeBeanRestocked } = require('./coffeeBeanSlice').coffeeBeanActions;
+const { cakeOrdered, cakeRestocked } = require('./cakeSlice').cakeActions;
 // only assetsReducer
 const initialState = {
   money: 1000,
@@ -36,6 +37,14 @@ const assetsSlice = createSlice({
       return state;
     })
     .addCase(coffeeBeanRestocked, (state, action) => {
+      state.money = state.money - action.payload.money
+      return state;
+    })
+    .addCase(cakeOrdered, (state, action) => {
+      state.money = state.money + action.payload.money
+      return state;
+    })
+    .addCase(cakeRestocked, (state, action) => {
       state.money = state.money - action.payload.money
       return state;
     })
