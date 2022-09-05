@@ -1,18 +1,16 @@
 {
-  "name": "only",
+  "name": "rtk",
   "version": "1.0.0",
-  "description": "redux demo",
+  "description": "redux toolkit demo",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
   "author": "Luciano",
   "license": "ISC",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.8.5",
     "axios": "^0.27.2",
-    "redux": "^4.2.0",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
+    "redux": "^4.2.0"
   }
 }
