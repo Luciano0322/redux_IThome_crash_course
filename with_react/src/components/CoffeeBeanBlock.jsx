@@ -50,12 +50,12 @@ const CoffeeBeanBlock = () => {
       <fieldset>
         <legend>咖啡豆進貨</legend>
         <div>
-          <label htmlFor="coffeeRestockQty">數量</label>
-          <input id="coffeeRestockQty" type="number" ref={coffeeBeanRestockQtyRef} />
+          <label htmlFor="coffeeBeanRestockQty">數量</label>
+          <input id="coffeeBeanRestockQty" type="number" ref={coffeeBeanRestockQtyRef} />
         </div>
         <div>
-          <label htmlFor="coffeeRestockMoney">價錢</label>
-          <input id="coffeeRestockMoney" type="number" ref={coffeeBeanRestockMoneyRef} />
+          <label htmlFor="coffeeBeanRestockMoney">價錢</label>
+          <input id="coffeeBeanRestockMoney" type="number" ref={coffeeBeanRestockMoneyRef} />
         </div>
         <button onClick={doRestockCoffeeBean}>
           進貨
