@@ -10,11 +10,11 @@ const coffeeSlice = createSlice({
   reducers: {
     // 這裡固定會有 sate & action 兩參數，直接對應於上面的 state
     coffeeOrdered: (state, action) => {
-      state.numOfCoffee = state.numOfCoffee - action.payload.qty
+      state.numOfCoffee = state.numOfCoffee - parseInt(action.payload.qty)
       return state;
     },
     coffeeRestocked: (state, action) => {
-      state.numOfCoffee = state.numOfCoffee + action.payload.qty
+      state.numOfCoffee = state.numOfCoffee + parseInt(action.payload.qty)
       return state;
     },
   },
