@@ -14,8 +14,8 @@ const CakeBlock = () => {
   // 購買送出
   const doOrderCake = () => {
     const sendData = {
-      qty: cakeOrderQtyRef.current.value,
-      money: cakeOrderMoneyRef.current.value
+      qty: cakeOrderQtyRef.current.value || 0,
+      money: cakeOrderMoneyRef.current.value || 0
     }
     dispatch(cakeOrdered(sendData))
   }
@@ -23,8 +23,8 @@ const CakeBlock = () => {
   const doRestockCake = () => {
 
     const sendData = {
-      qty: cakeRestockQtyRef.current.value,
-      money: cakeRestockMoneyRef.current.value
+      qty: cakeRestockQtyRef.current.value || 0,
+      money: cakeRestockMoneyRef.current.value || 0
     }
     dispatch(cakeRestocked(sendData))
   }

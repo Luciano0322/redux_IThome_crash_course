@@ -14,8 +14,8 @@ const CoffeeBeanBlock = () => {
   // 購買送出
   const doOrderCoffeeBean = () => {
     const sendData = {
-      qty: coffeeBeanOrderQtyRef.current.value,
-      money: coffeeBeanOrderMoneyRef.current.value
+      qty: coffeeBeanOrderQtyRef.current.value || 0,
+      money: coffeeBeanOrderMoneyRef.current.value || 0
     }
     dispatch(coffeeBeanOrdered(sendData))
   }
@@ -23,8 +23,8 @@ const CoffeeBeanBlock = () => {
   const doRestockCoffeeBean = () => {
 
     const sendData = {
-      qty: coffeeBeanRestockQtyRef.current.value,
-      money: coffeeBeanRestockMoneyRef.current.value
+      qty: coffeeBeanRestockQtyRef.current.value || 0,
+      money: coffeeBeanRestockMoneyRef.current.value || 0
     }
     dispatch(coffeeBeanRestocked(sendData))
   }

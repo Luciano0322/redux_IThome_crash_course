@@ -52,4 +52,3 @@ const assetsSlice = createSlice({
 })
 
 module.exports = assetsSlice.reducer;
-module.exports.cakeActions = assetsSlice.actions;
