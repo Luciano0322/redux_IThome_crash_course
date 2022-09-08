@@ -1,5 +1,5 @@
-const { createSlice, createAsyncThunk } = require("@reduxjs/toolkit");
-const axios = require('axios');
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
+import axios from "axios"
 
 const initialState = {
   loading: false,
@@ -7,7 +7,7 @@ const initialState = {
   error: ''
 }
 
-const fetchPokes = createAsyncThunk('pokemon/fetchPokes', (url) => {
+export const fetchPokes = createAsyncThunk('pokemon/fetchPokes', (url) => {
   return axios
     .get(url)
     .then(response => response.data)
@@ -37,6 +37,7 @@ const pokemonSlice = createSlice({
     })
   }
 })
+// 方便辨識的處理
+export const selectPokemon = (state) => state.pokemon;
 
-module.exports = pokemonSlice.reducer;
-module.exports.fetchPokes = fetchPokes;
+export default pokemonSlice.reducer
