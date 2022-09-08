@@ -12,3 +12,60 @@ body {
   padding: 0 2rem;
   margin: 0 auto;
 }
+
+.f-c-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokes-wrapper {
+  display: grid;
+  gap: .5rem;
+  margin: .5rem 0;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+}
+
+.poke-item {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  padding: .25rem;
+  border-radius: .5rem;
+  box-shadow: 2px 2px 8px #ccc;
+}
+
+.btn {
+  border: 0;
+  border-radius: .5rem;
+  cursor: pointer;
+  outline: 0;
+  display: inline-flex;
+  position: relative;
+  align-items: center;
+  vertical-align: middle;
+  justify-content: center;
+  text-decoration: none;
+  background-color: transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transition: all 0.2s ease-in-out;
+  filter: brightness(1.5);
+}
+
+.btn:active {
+  transition: all 0.2s ease-in-out;
+  filter: brightness(0.5);
+}
+
+.btn:disabled {
+  color: #aaa;
+}
+
+.filled {
+  background-color: indigo;
+  color: white;
+}

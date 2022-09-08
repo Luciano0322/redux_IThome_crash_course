@@ -13,13 +13,34 @@ const Pokemons = () => {
   }, [pokemon.data.length])
 
   console.log('pokeData', pokemon);
+  const pageClick = (url) => {
+    dispatch(fetchPokes(url))
+  } 
 
   return (
     <div>
       <h4>Pokemon List</h4>
-      <ul>
+      <div className='f-c-c'>
+        <button
+          className='btn filled'
+          onClick={() => pageClick(pokemon.data?.previous)} 
+          disabled={pokemon.data?.previous === null}
+          style={{padding: '.5rem', marginRight: '.5rem'}}
+        >
+          上一頁
+        </button>
+        <button 
+          className='btn filled'
+          onClick={() => pageClick(pokemon.data?.next)}
+          disabled={pokemon.data?.next === null}
+          style={{padding: '.5rem'}}
+        >
+          下一頁
+        </button>
+      </div>
+      <div className='pokes-wrapper'>
         {pokemon.data?.results?.map((pokemon) => (
-          <li key={pokemon.url}>
+          <div key={pokemon.url} className='poke-item'>
             <img 
               alt={pokemon.name} 
               width="200px" 
@@ -27,9 +48,9 @@ const Pokemons = () => {
               src={`https://img.pokemondb.net/artwork/large/${pokemon.name}.jpg`} 
             />
             <p>{pokemon.name}</p>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }
