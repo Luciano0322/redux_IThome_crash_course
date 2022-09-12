@@ -1,0 +1,14 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  padding: 0;
+}
+
+.container {
+  width: min(100%, 768px);
+  padding: 0 2rem;
+  margin: 0 auto;
+}
