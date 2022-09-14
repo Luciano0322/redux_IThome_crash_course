@@ -6,4 +6,4 @@
 - rtk_query redux, redux-toolkit, react-redux, typescript 的結合 --vite -with yarn
 <hr/>
 
-大家可以搭配我 [14th](https://ithelp.ithome.com.tw/articles/10287139) 來使用，也希望能幫助大家更了解 Redux 的應用。
+大家可以搭配我 [14th 鐵人賽](https://ithelp.ithome.com.tw/articles/10287139) 來使用，也希望能幫助大家更了解 Redux 的應用。
