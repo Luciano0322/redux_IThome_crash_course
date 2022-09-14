@@ -69,3 +69,8 @@ body {
   background-color: indigo;
   color: white;
 }
+
+.del {
+  background-color: darkred;
+  color: white;
+}

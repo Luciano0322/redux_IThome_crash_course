@@ -45,6 +45,19 @@ export const todoApi = createApi({
         };
       },
       invalidatesTags: [{type: 'Todos', id: 'LIST'}]
+    }),
+    // 新增功能
+    addTodo: builder.mutation<string, string>({
+      query(text) {
+        return {
+          url: `todos`,
+          method: 'POST',
+          body: {
+            text,
+          }
+        };
+      },
+      invalidatesTags: [{type: 'Todos', id: 'LIST'}]
     })
   })
 })
