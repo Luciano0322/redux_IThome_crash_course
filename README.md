@@ -8,3 +8,5 @@
 
 大家可以搭配我 [14th 鐵人賽](https://ithelp.ithome.com.tw/articles/10287139) 來使用，也希望能幫助大家更了解 Redux 的應用。
 - [Day1](https://ithelp.ithome.com.tw/articles/10287139) ~ [Day11](https://ithelp.ithome.com.tw/articles/10288667) --with only 
+- [Day12](https://ithelp.ithome.com.tw/articles/10288668) ~ [Day17](https://ithelp.ithome.com.tw/articles/10288677) --with rtk
+- [Day18](https://ithelp.ithome.com.tw/articles/10289539) ~ [Day24](https://ithelp.ithome.com.tw/articles/10290469) --with with_react
